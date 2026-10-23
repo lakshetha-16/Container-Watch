@@ -1,0 +1,22 @@
+# Sample containers so your dashboard has something to show.
+#   Start:  docker compose -f docker-compose.demo.yml up -d
+#   Stop:   docker compose -f docker-compose.demo.yml down     <- do this after your screenshots!
+# demo-cpu-burner keeps one CPU core busy on purpose, so you can see a "High usage" alert.
+services:
+  web-nginx:
+    image: nginx:alpine
+    container_name: demo-web-nginx
+    ports:
+      - "8081:80"
+  cache-redis:
+    image: redis:alpine
+    container_name: demo-cache-redis
+  cpu-burner:
+    image: alpine
+    container_name: demo-cpu-burner
+    command: ["sh", "-c", "while true; do :; done"]
+  finished-job:
+    image: alpine
+    container_name: demo-finished-job
+    command: ["echo", "job finished"]
+    restart: "no"

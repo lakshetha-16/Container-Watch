@@ -1,0 +1,17 @@
+{
+  "name": "containerwatch-backend",
+  "version": "1.0.0",
+  "description": "Node + Express API that reads Docker container stats",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "demo": "node server.js",
+    "test": "node tests/test_parsers.js && node tests/test_api.js"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
